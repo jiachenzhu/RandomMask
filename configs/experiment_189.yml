@@ -1,0 +1,9 @@
+backbone_type: resnet
+comment: RandomMask_189_backbone_type_resnet_planes_multipliers_2_8_2_sim_coeff_50.0_std_coeff_6.25_lr_0.6
+planes_multipliers:
+- 2
+- 8
+- 2
+sim_coeff: 50.0
+start_lr: 0.6
+std_coeff: 6.25

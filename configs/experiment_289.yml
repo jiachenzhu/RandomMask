@@ -1,0 +1,9 @@
+backbone_type: convnext
+comment: RandomMask_289_backbone_type_convnext_planes_multipliers_2_2_2_sim_coeff_6.25_std_coeff_50.0_lr_0.3
+planes_multipliers:
+- 2
+- 2
+- 2
+sim_coeff: 6.25
+start_lr: 0.3
+std_coeff: 50.0
