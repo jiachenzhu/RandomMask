@@ -19,3 +19,8 @@ lars_adaptation_filter: True
 sim_coeff: 25.0
 std_coeff: 25.0
 cov_coeff: 1.0
+
+blur_kernel_size: 13.0
+blur_sigma: 3.0
+mask_percentage: 0.5
+gaussian_noise: 0.25
