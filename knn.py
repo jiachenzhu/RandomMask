@@ -16,6 +16,7 @@ def compute_accuracy(y_pred, y_true):
     assert y_pred.shape == y_true.shape
     return 1 - np.count_nonzero(y_pred - y_true) / y_true.size
 
+@torch.no_grad()
 def knn_classify(k, train_features, train_labels, test_features, test_labels):
     """Perform k-Nearest Neighbor classification using cosine similaristy as metric.
 
@@ -29,7 +30,7 @@ def knn_classify(k, train_features, train_labels, test_features, test_labels):
     topk = sim_mat.topk(k=k, dim=0)
     topk_pred = train_labels[topk.indices]
     test_pred = topk_pred.mode(0).values.detach()
-    acc = compute_accuracy(test_pred.numpy(), test_labels.numpy())
+    acc = compute_accuracy(test_pred.cpu().numpy(), test_labels.cpu().numpy())
     print("kNN: {}".format(acc))
     return acc
 
