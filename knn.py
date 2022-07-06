@@ -55,6 +55,12 @@ model.eval()
 
 ckpt = torch.load(os.path.join(f"{config.checkpoint_dir}/{config.comment}", "checkpoint_20.pt"), map_location='cpu')
 print(f'resuming from checkpoint 20')
+
+encoder_state_dict = {}
+for k, v in ckpt['model_state_dict'].items():
+    name = k[7:] # remove module.backbone.
+    encoder_state_dict[name] = v
+
 print(model.load_state_dict(ckpt['model_state_dict'], strict=False))
 
 all_p = []
