@@ -61,7 +61,7 @@ for k, v in ckpt['model_state_dict'].items():
     name = k[7:] # remove module.backbone.
     encoder_state_dict[name] = v
 
-print(model.load_state_dict(ckpt['model_state_dict'], strict=False))
+print(model.load_state_dict(encoder_state_dict, strict=False))
 
 all_p = []
 all_label = []
