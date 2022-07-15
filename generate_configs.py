@@ -1,10 +1,10 @@
 import os
 import yaml
 
-i = 1
-for backbone_type in ['resnet', 'convnext']:
-    for sim_coeff in [25.0 / 4, 25.0 / 2, 25.0, 50.0]:
-        for std_coeff in [25.0 / 4, 25.0 / 2, 25.0, 50.0]:
+i = 501
+for backbone_type in ['resnet']:
+    for sim_coeff in [25.0 / 2, 25.0, 50.0]:
+        for std_coeff in [25.0 / 2, 25.0, 50.0]:
             for start_lr in [0.15, 0.3, 0.6, 1.2, 2.4]:
                 for planes_multipliers in [
                     [2, 2, 2],
